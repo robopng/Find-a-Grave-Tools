@@ -162,7 +162,10 @@ def log(start:bool = True) :
 def get_url(session, url) :
 
 	# --- Vars. ---
-	tries = 3
+	# 10 tries is much higher than the original 3 but prevents FindAGraver
+	# from stalling excessively once it realizes what's happening - after 
+	# which point if the program resumes it will not require so many retries
+	tries = 10  
 
 	# --- Request URL. ---
 	while tries > 0 :  # Multiple request tries needed?
