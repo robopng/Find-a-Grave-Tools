@@ -78,7 +78,7 @@ for cemetery_id, groups in instructions.items() : # Loop cemeteries.
 
 	# --- Create cemetery folder? ---
 	if not os.path.exists(path_to_cemetery_folder) :  # Does folder exist?
-		os.mkdir(path_to_cemetery_folder)  # Create a new folder.
+		os.makedirs(path_to_cemetery_folder)  # Create a new folder.
 		if 'burial' not in groups :
 			groups.insert(0, 'burial')  # Will need to find burials.
 		time.sleep(1)
